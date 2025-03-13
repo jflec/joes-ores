@@ -1,0 +1,17 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+
+[[mods]]
+modId="${modid}"
+version="${mod_version}"
+displayName="${mod_name}"
+#logoFile="ores.png"
+authors="${mod_authors}"
+description='''${mod_description}'''
+
+#[[mixins]]
+#config="${modid}.mixins.json"
+

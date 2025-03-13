@@ -1,0 +1,3 @@
+// 1.21.1	2025-03-13T05:48:52.8014445	Tags for minecraft:block mod id ores
+eff8aeeac3d721cb9598bdbf77776fe279b19d35 data/minecraft/tags/block/mineable/pickaxe.json
+c808fa6e08f550b98c96efbd5165b17a8d8c712f data/minecraft/tags/block/needs_diamond_tool.json

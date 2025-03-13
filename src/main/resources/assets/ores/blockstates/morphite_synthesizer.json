@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "ores:block/morphite_synthesizer"
+    },
+    "facing=south": {
+      "model": "ores:block/morphite_synthesizer",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ores:block/morphite_synthesizer",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ores:block/morphite_synthesizer",
+      "y": 270
+    }
+  }
+}
