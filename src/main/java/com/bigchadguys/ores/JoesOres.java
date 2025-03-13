@@ -29,7 +29,6 @@ public class JoesOres {
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
         AddItemModifier.GLOBAL_LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
-        FloriteHoeEffect.Actions.get().setup();
     }
 
     @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

@@ -43,7 +43,6 @@ public class SolariumArmorItem extends ArmorItem {
         }
 
         boolean fullSet = isWearingFullSet(livingEntity);
-        // Bonus applies during the day (time < 13000) or in the Nether dimension.
         boolean condition = (world.getDayTime() % 24000L < 13000L) || (world.dimension() == Level.NETHER);
 
         AttributeInstance healthAttr = livingEntity.getAttribute(Attributes.MAX_HEALTH);

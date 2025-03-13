@@ -15,7 +15,7 @@ public class NecroniumScytheItem extends SwordItem {
     @Override
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
         if (!attacker.level().isClientSide() && attacker instanceof ServerPlayer player) {
-            NecroniumScytheEffect.spreadAttack(target, player); // Now calls the correct method
+            NecroniumScytheEffect.spreadAttack(target, player);
         }
         return super.hurtEnemy(stack, target, attacker);
     }

@@ -14,6 +14,7 @@ public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(JoesOres.MOD_ID);
 
+    // Pre-Iron Items
     public static final DeferredItem<Item> COPPER_SWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.COPPER, 1.0f, -2.8f))));
     public static final DeferredItem<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
@@ -34,20 +35,7 @@ public class ModItems {
     public static final DeferredItem<Item> COPPER_BOOTS = ITEMS.register("copper_boots",
             () -> new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(37))));
 
-    public static final DeferredItem<Item> RAW_MORPHITE = ITEMS.registerSimpleItem("raw_morphite");
-    public static final DeferredItem<Item> MORPHITE_INGOT = ITEMS.registerSimpleItem("morphite_ingot");
-
-    public static final DeferredItem<Item> ECTOPLASM = ITEMS.registerSimpleItem("ectoplasm");
-    public static final DeferredItem<Item> NECRONIUM_INGOT = ITEMS.registerSimpleItem("necronium_ingot");
-    public static final DeferredItem<Item> MUSH = ITEMS.registerSimpleItem("mush");
-    public static final DeferredItem<Item> FLORITE_INGOT = ITEMS.registerSimpleItem("florite_ingot");
-    public static final DeferredItem<Item> TECTONIC_SHARD = ITEMS.registerSimpleItem("tectonic_shard");
-    public static final DeferredItem<Item> GEOVAR_INGOT = ITEMS.registerSimpleItem("geovar_ingot");
-    public static final DeferredItem<Item> PETRIFIED_BARK = ITEMS.registerSimpleItem("petrified_bark");
-    public static final DeferredItem<Item> PETRAFITE_INGOT = ITEMS.registerSimpleItem("petrafite_ingot");
-    public static final DeferredItem<Item> QUICKSILVER = ITEMS.registerSimpleItem("quicksilver");
-    public static final DeferredItem<Item> SWIFTITE_INGOT = ITEMS.registerSimpleItem("swiftite_ingot");
-
+    // Post Iron Items
     public static final DeferredItem<Item> RAW_COBALT = ITEMS.registerSimpleItem("raw_cobalt");
     public static final DeferredItem<Item> COBALT_INGOT = ITEMS.registerSimpleItem("cobalt_ingot");
     public static final DeferredItem<Item> COBALT_SWORD = ITEMS.register("cobalt_sword",
@@ -90,6 +78,7 @@ public class ModItems {
     public static final DeferredItem<Item> MAGNITE_BOOTS = ITEMS.register("magnite_boots",
             () -> new ArmorItem(ModArmorMaterials.MAGNITE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(37))));
 
+    // Post-Diamond Items
     public static final DeferredItem<Item> RAW_MYTHRIL = ITEMS.registerSimpleItem("raw_mythril");
     public static final DeferredItem<Item> MYTHRIL_INGOT = ITEMS.registerSimpleItem("mythril_ingot");
     public static final DeferredItem<Item> MYTHRIL_SWORD = ITEMS.register("mythril_sword",
@@ -153,6 +142,7 @@ public class ModItems {
     public static final DeferredItem<Item> ADAMANTITE_BOOTS = ITEMS.register("adamantite_boots",
             () -> new ArmorItem(ModArmorMaterials.ADAMANTITE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(37))));
 
+    // Post-Netherite Items
     public static final DeferredItem<Item> RAW_CELESTIUM = ITEMS.registerSimpleItem("raw_celestium");
     public static final DeferredItem<Item> LUNARIUM_INGOT = ITEMS.registerSimpleItem("lunarium_ingot");
     public static final DeferredItem<Item> SOLARIUM_INGOT = ITEMS.registerSimpleItem("solarium_ingot");
@@ -203,6 +193,25 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.VIRIDIUM, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(37))));
     public static final DeferredItem<Item> VIRIDIUM_BOOTS = ITEMS.register("viridium_boots",
             () -> new ArmorItem(ModArmorMaterials.VIRIDIUM, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(37))));
+
+    // Morphite Items
+    public static final DeferredItem<Item> RAW_MORPHITE = ITEMS.registerSimpleItem("raw_morphite");
+    public static final DeferredItem<Item> MORPHITE_INGOT = ITEMS.registerSimpleItem("morphite_ingot");
+
+    public static final DeferredItem<Item> ECTOPLASM = ITEMS.registerSimpleItem("ectoplasm");
+    public static final DeferredItem<Item> NECRONIUM_INGOT = ITEMS.registerSimpleItem("necronium_ingot");
+
+    public static final DeferredItem<Item> MUSH = ITEMS.registerSimpleItem("mush");
+    public static final DeferredItem<Item> FLORITE_INGOT = ITEMS.registerSimpleItem("florite_ingot");
+
+    public static final DeferredItem<Item> TECTONIC_SHARD = ITEMS.registerSimpleItem("tectonic_shard");
+    public static final DeferredItem<Item> GEOVAR_INGOT = ITEMS.registerSimpleItem("geovar_ingot");
+
+    public static final DeferredItem<Item> PETRIFIED_BARK = ITEMS.registerSimpleItem("petrified_bark");
+    public static final DeferredItem<Item> PETRAFITE_INGOT = ITEMS.registerSimpleItem("petrafite_ingot");
+
+    public static final DeferredItem<Item> QUICKSILVER = ITEMS.registerSimpleItem("quicksilver");
+    public static final DeferredItem<Item> SWIFTITE_INGOT = ITEMS.registerSimpleItem("swiftite_ingot");
 
     public static final DeferredItem<Item> NECRONIUM_SWORD = ITEMS.register("necronium_sword",
             () -> new NecroniumScytheItem(ModToolTiers.NECRONIUM,

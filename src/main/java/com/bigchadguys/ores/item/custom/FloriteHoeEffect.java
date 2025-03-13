@@ -22,11 +22,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Supplier;
-
 public class FloriteHoeEffect {
+
+    private static final int HORIZONTAL_RANGE = 4;
+    private static final int VERTICAL_RANGE = 1;
 
     public static void useHoe(Level world, ServerPlayer player) {
         applyHoeEffect(world, player);
@@ -34,16 +33,14 @@ public class FloriteHoeEffect {
 
     private static void applyHoeEffect(Level world, ServerPlayer player) {
         final BlockPos playerPos = player.blockPosition();
-        final int horizontalRange = 4;
-        final int verticalRange = 1;
-        final Set<Action> actions = Actions.get().getActions();
-        for (int dx = -horizontalRange; dx <= horizontalRange; dx++) {
-            for (int dz = -horizontalRange; dz <= horizontalRange; dz++) {
-                for (int dy = -verticalRange; dy <= verticalRange; dy++) {
-                    final BlockPos targetPos = playerPos.offset(dx, dy, dz);
-                    final BlockState state = world.getBlockState(targetPos);
+        final ImmutableSet<Action> actions = Actions.get().getActions();
+        for (int dx = -HORIZONTAL_RANGE; dx <= HORIZONTAL_RANGE; dx++) {
+            for (int dz = -HORIZONTAL_RANGE; dz <= HORIZONTAL_RANGE; dz++) {
+                for (int dy = -VERTICAL_RANGE; dy <= VERTICAL_RANGE; dy++) {
+                    BlockPos targetPos = playerPos.offset(dx, dy, dz);
+                    BlockState state = world.getBlockState(targetPos);
                     if (state.isAir() || state.getBlock() instanceof GrassBlock) continue;
-                    final ActionContext context = new ActionContext(world, targetPos, state,
+                    ActionContext context = new ActionContext(world, targetPos, state,
                             player.getMainHandItem(), player.getOffhandItem(), player);
                     for (Action act : actions) {
                         if (act.canApply(context)) {
@@ -65,18 +62,20 @@ public class FloriteHoeEffect {
     public static class RandomTickableAction implements Action {
         @Override
         public boolean canApply(ActionContext context) {
-            final BlockState s = context.state();
-            return s.getBlock() instanceof SugarCaneBlock ||
-                    s.getBlock() instanceof CactusBlock ||
-                    (s.getBlock() instanceof StemBlock && s.getValue(StemBlock.AGE) == 7);
+            BlockState state = context.state();
+            Object block = state.getBlock();
+            return block instanceof SugarCaneBlock ||
+                    block instanceof CactusBlock ||
+                    (block instanceof StemBlock && state.getValue(StemBlock.AGE) == 7);
         }
+
         @Override
         public void execute(ActionContext context) {
             ServerLevel srvWorld = (ServerLevel) context.world();
-            final BlockState s = context.state();
-            final RandomSource srvRng = srvWorld.getRandom();
+            BlockState state = context.state();
+            RandomSource rng = srvWorld.getRandom();
             for (int i = 0; i < 4; i++) {
-                s.randomTick(srvWorld, context.pos(), srvRng);
+                state.randomTick(srvWorld, context.pos(), rng);
             }
         }
     }
@@ -84,19 +83,21 @@ public class FloriteHoeEffect {
     public static class BoneMealAction implements Action {
         @Override
         public boolean canApply(ActionContext context) {
-            final BlockState s = context.state();
-            if (s.getBlock() instanceof BonemealableBlock && !(s.getBlock() instanceof StemBlock))
+            BlockState state = context.state();
+            Object block = state.getBlock();
+            if (block instanceof BonemealableBlock && !(block instanceof StemBlock))
                 return true;
-            if (s.getBlock() instanceof StemBlock)
-                return s.getValue(StemBlock.AGE) != 7;
+            if (block instanceof StemBlock)
+                return state.getValue(StemBlock.AGE) != 7;
             return false;
         }
+
         @Override
         public void execute(ActionContext context) {
-            final BlockPos pos = context.pos();
-            final Vec3 center = new Vec3(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
-            final BlockHitResult hit = new BlockHitResult(center, Direction.UP, pos, false);
-            final UseOnContext useContext = new UseOnContext(context.player(), InteractionHand.MAIN_HAND, hit);
+            BlockPos pos = context.pos();
+            Vec3 center = new Vec3(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+            BlockHitResult hit = new BlockHitResult(center, Direction.UP, pos, false);
+            UseOnContext useContext = new UseOnContext(context.player(), InteractionHand.MAIN_HAND, hit);
             BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), context.world(), pos, useContext.getPlayer());
             if (!context.player().isCreative()) {
                 context.mainItem().hurtAndBreak(1, context.player(), context.player().getEquipmentSlotForItem(context.mainItem()));
@@ -106,25 +107,16 @@ public class FloriteHoeEffect {
 
     public enum Actions {
         INSTANCE;
-        private ImmutableSet<Action> actions;
-        private final Set<Supplier<Action>> suppliers = new HashSet<>();
+        private final ImmutableSet<Action> actions;
+
         Actions() {
-            register(RandomTickableAction::new);
-            register(BoneMealAction::new);
+            actions = ImmutableSet.of(new RandomTickableAction(), new BoneMealAction());
         }
-        public void register(Supplier<Action> s) {
-            suppliers.add(s);
-        }
-        public void setup() {
-            Set<Action> set = new HashSet<>();
-            for (Supplier<Action> s : suppliers) {
-                set.add(s.get());
-            }
-            actions = ImmutableSet.copyOf(set);
-        }
+
         public static Actions get() {
             return INSTANCE;
         }
+
         public ImmutableSet<Action> getActions() {
             return actions;
         }
