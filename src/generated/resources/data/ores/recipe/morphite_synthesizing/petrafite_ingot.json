@@ -1,0 +1,10 @@
+{
+  "type": "ores:morphite_synthesizing",
+  "upgrade": {
+    "item": "ores:petrified_bark"
+  },
+  "result": {
+    "id": "ores:petrafite_ingot",
+    "Count": 1
+  }
+}

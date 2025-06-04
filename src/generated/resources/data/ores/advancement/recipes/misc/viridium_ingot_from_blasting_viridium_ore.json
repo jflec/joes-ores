@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ores:viridium_ingot_from_blasting_viridium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_viridium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "ores:viridium_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_viridium_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ores:viridium_ingot_from_blasting_viridium_ore"
+    ]
+  }
+}

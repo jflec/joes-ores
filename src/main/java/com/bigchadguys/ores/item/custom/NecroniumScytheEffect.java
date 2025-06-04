@@ -28,14 +28,16 @@ public class NecroniumScytheEffect {
     public static void spreadAttack(LivingEntity initialTarget, ServerPlayer attacker) {
         if (!(attacker.level() instanceof ServerLevel serverWorld)) return;
 
-        Holder<net.minecraft.world.damagesource.DamageType> noKnockbackDamage =
+        Holder<net.minecraft.world.damagesource.DamageType> cactusType =
                 attacker.level().registryAccess()
                         .registryOrThrow(Registries.DAMAGE_TYPE)
                         .getHolderOrThrow(DamageTypes.CACTUS);
-        DamageSource source = new DamageSource(noKnockbackDamage, attacker);
+        DamageSource source = new DamageSource(cactusType, attacker);
 
         Set<LivingEntity> hitTargets = new HashSet<>();
         Queue<LivingEntity> toProcess = new LinkedList<>();
+
+        hitTargets.add(initialTarget);
         toProcess.add(initialTarget);
 
         float totalDamageDealt = 0f;
@@ -43,15 +45,16 @@ public class NecroniumScytheEffect {
 
         while (!toProcess.isEmpty() && bounceCount < MAX_BOUNCES) {
             LivingEntity currentTarget = toProcess.poll();
-
             AABB searchArea = currentTarget.getBoundingBox().inflate(SEARCH_RADIUS, SEARCH_RADIUS, SEARCH_RADIUS);
             List<LivingEntity> nearbyTargets = serverWorld.getEntitiesOfClass(LivingEntity.class, searchArea);
 
             LivingEntity closestCandidate = null;
             double closestDistance = Double.MAX_VALUE;
+
             for (LivingEntity target : nearbyTargets) {
                 if (target == attacker || !target.isAlive() || !isHostile(target) || hitTargets.contains(target))
                     continue;
+
                 double distance = target.distanceTo(currentTarget);
                 if (distance < closestDistance) {
                     closestDistance = distance;
@@ -60,11 +63,18 @@ public class NecroniumScytheEffect {
             }
 
             if (closestCandidate != null) {
+                closestCandidate.hurtTime = 0;
+                closestCandidate.invulnerableTime = 0;
+
                 if (closestCandidate.hurt(source, DAMAGE_AMOUNT)) {
                     totalDamageDealt += DAMAGE_AMOUNT;
-                    closestCandidate.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION, 0, false, true));
+                    closestCandidate.addEffect(
+                            new MobEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION, 0, false, true)
+                    );
+
                     spawnDrainParticles(serverWorld, closestCandidate);
                     spawnSpreadTrailDynamic(serverWorld, currentTarget, closestCandidate);
+
                     hitTargets.add(closestCandidate);
                     toProcess.add(closestCandidate);
                     bounceCount++;
@@ -76,6 +86,7 @@ public class NecroniumScytheEffect {
             attacker.heal(totalDamageDealt);
         }
     }
+
 
     private static boolean isHostile(LivingEntity entity) {
         return entity.getType().getCategory() == MobCategory.MONSTER;
@@ -89,14 +100,16 @@ public class NecroniumScytheEffect {
             double offsetY = (random.nextDouble() * 2 - 1) * OFFSET_RANGE;
             double offsetZ = (random.nextDouble() * 2 - 1) * OFFSET_RANGE;
             Vec3 particlePos = targetCenter.add(offsetX, offsetY, offsetZ);
-            world.sendParticles(ParticleTypes.SCULK_SOUL, particlePos.x, particlePos.y, particlePos.z,
-                    0, 0, 0, 0, PARTICLE_SPEED);
+            world.sendParticles(ParticleTypes.SCULK_SOUL,
+                    particlePos.x, particlePos.y, particlePos.z,
+                    PARTICLE_COUNT,
+                    0, 0, 0, PARTICLE_SPEED);
         }
     }
 
     private static void spawnSpreadTrailDynamic(ServerLevel world, LivingEntity from, LivingEntity to) {
         Vec3 start = from.position().add(0, from.getBbHeight() / 2, 0);
-        Vec3 end = to.position().add(0, to.getBbHeight() / 2, 0);
+        Vec3 end   = to.position().add(0, to.getBbHeight() / 2, 0);
         double distance = start.distanceTo(end);
         int segments = Math.max(1, (int) (distance * 2));
 
@@ -105,7 +118,8 @@ public class NecroniumScytheEffect {
             double x = start.x + (end.x - start.x) * t;
             double y = start.y + (end.y - start.y) * t;
             double z = start.z + (end.z - start.z) * t;
-            world.sendParticles(ParticleTypes.SCULK_CHARGE_POP, x, y, z, 1, 0, 0, 0, 0);
+            world.sendParticles(ParticleTypes.SCULK_CHARGE_POP,
+                    x, y, z, 1, 0, 0, 0, 0);
         }
     }
 }

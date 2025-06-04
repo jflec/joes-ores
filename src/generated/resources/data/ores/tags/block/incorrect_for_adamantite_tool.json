@@ -1,0 +1,14 @@
+{
+  "remove": [
+    "ores:celestium_ore",
+    "ores:deepslate_celestium_ore"
+  ],
+  "values": [
+    "#ores:incorrect_for_orichalcum_tool",
+    "ores:viridium_ore",
+    "ores:morphite_ore",
+    "ores:deepslate_morphite_ore",
+    "ores:tectonic_ore",
+    "ores:deepslate_tectonic_ore"
+  ]
+}

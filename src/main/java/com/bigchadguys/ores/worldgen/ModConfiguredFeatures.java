@@ -34,58 +34,61 @@ public class ModConfiguredFeatures {
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest endStoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-
-        List<OreConfiguration.TargetBlockState> overworldCobaltOres = List.of(
+        register(context, OVERWORLD_COBALT_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.COBALT_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState())
+        ), 6));
 
-        List<OreConfiguration.TargetBlockState> overworldMagniteOres = List.of(
+        register(context, OVERWORLD_MAGNITE_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.MAGNITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MAGNITE_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MAGNITE_ORE.get().defaultBlockState())
+        ), 5));
 
-        List<OreConfiguration.TargetBlockState> overworldMythrilOres = List.of(
+        register(context, OVERWORLD_MYTHRIL_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.MYTHRIL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MYTHRIL_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MYTHRIL_ORE.get().defaultBlockState())
+        ), 5));
 
-        List<OreConfiguration.TargetBlockState> overworldOrichalcumOres = List.of(
+        register(context, OVERWORLD_ORICHALCUM_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.ORICHALCUM_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_ORICHALCUM_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_ORICHALCUM_ORE.get().defaultBlockState())
+        ), 4));
 
-        List<OreConfiguration.TargetBlockState> overworldAdamantiteOres = List.of(
+        register(context, OVERWORLD_ADAMANTITE_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.ADAMANTITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get().defaultBlockState())
+        ), 3));
 
-        List<OreConfiguration.TargetBlockState> overworldCelestiumOres = List.of(
+        register(context, OVERWORLD_CELESTIUM_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.CELESTIUM_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CELESTIUM_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CELESTIUM_ORE.get().defaultBlockState())
+        ), 2));
 
-        List<OreConfiguration.TargetBlockState> endViridiumOres = List.of(
-                OreConfiguration.target(endStoneReplaceables, ModBlocks.VIRIDIUM_ORE.get().defaultBlockState()));
+        register(context, END_VIRIDIUM_KEY, Feature.ORE, new OreConfiguration(List.of(
+                OreConfiguration.target(endStoneReplaceables, ModBlocks.VIRIDIUM_ORE.get().defaultBlockState())
+        ), 1));
 
-        List<OreConfiguration.TargetBlockState> overworldMorphiteOres = List.of(
+        register(context, OVERWORLD_MORPHITE_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.MORPHITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MORPHITE_ORE.get().defaultBlockState()));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MORPHITE_ORE.get().defaultBlockState())
+        ), 2));
 
-        List<OreConfiguration.TargetBlockState> overworldTectonicOres = List.of(
+        register(context, OVERWORLD_TECTONIC_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.TECTONIC_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_TECTONIC_ORE.get().defaultBlockState()));
-
-        register(context, OVERWORLD_COBALT_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 8));
-        register(context, OVERWORLD_MAGNITE_KEY, Feature.ORE, new OreConfiguration(overworldMagniteOres, 7));
-        register(context, OVERWORLD_MYTHRIL_KEY, Feature.ORE, new OreConfiguration(overworldMythrilOres, 6));
-        register(context, OVERWORLD_ORICHALCUM_KEY, Feature.ORE, new OreConfiguration(overworldOrichalcumOres, 6));
-        register(context, OVERWORLD_ADAMANTITE_KEY, Feature.ORE, new OreConfiguration(overworldAdamantiteOres, 5));
-        register(context, OVERWORLD_CELESTIUM_KEY, Feature.ORE, new OreConfiguration(overworldCelestiumOres, 4));
-        register(context, END_VIRIDIUM_KEY, Feature.ORE, new OreConfiguration(endViridiumOres, 3));
-        register(context, OVERWORLD_MORPHITE_KEY, Feature.ORE, new OreConfiguration(overworldMorphiteOres, 3));
-        register(context, OVERWORLD_TECTONIC_KEY, Feature.ORE, new OreConfiguration(overworldTectonicOres, 3));
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_TECTONIC_ORE.get().defaultBlockState())
+        ), 1));
     }
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+    private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(
+            BootstrapContext<ConfiguredFeature<?, ?>> context,
+            ResourceKey<ConfiguredFeature<?, ?>> key,
+            F feature,
+            FC configuration
+    ) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
 }

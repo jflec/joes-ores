@@ -1,0 +1,10 @@
+{
+  "type": "ores:morphite_synthesizing",
+  "upgrade": {
+    "item": "ores:quicksilver"
+  },
+  "result": {
+    "id": "ores:swiftite_ingot",
+    "Count": 1
+  }
+}

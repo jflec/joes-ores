@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "ores:mythril_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "CC ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ores:mythril_hoe"
+  }
+}

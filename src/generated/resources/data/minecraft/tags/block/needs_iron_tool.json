@@ -1,0 +1,9 @@
+{
+  "values": [
+    "ores:magnite_ore",
+    "ores:deepslate_magnite_ore",
+    "ores:cobalt_ore",
+    "ores:deepslate_cobalt_ore",
+    "ores:cobalt_furnace"
+  ]
+}

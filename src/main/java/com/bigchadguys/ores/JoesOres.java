@@ -5,10 +5,11 @@ import com.bigchadguys.ores.block.entity.ModBlockEntities;
 import com.bigchadguys.ores.item.ModArmorMaterials;
 import com.bigchadguys.ores.item.ModCreativeModeTabs;
 import com.bigchadguys.ores.item.ModItems;
-import com.bigchadguys.ores.item.custom.FloriteHoeEffect;
 import com.bigchadguys.ores.loot.AddItemModifier;
 import com.bigchadguys.ores.recipe.ModRecipes;
 import com.bigchadguys.ores.screen.ModMenuTypes;
+import com.bigchadguys.ores.screen.custom.AdamantiteFurnaceScreen;
+import com.bigchadguys.ores.screen.custom.CobaltFurnaceScreen;
 import com.bigchadguys.ores.screen.custom.MorphiteSynthesizerScreen;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -36,6 +37,9 @@ public class JoesOres {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.MORPHITE_SYNTHESIZER_MENU.get(), MorphiteSynthesizerScreen::new);
+            event.register(ModMenuTypes.COBALT_FURNACE_MENU.get(), CobaltFurnaceScreen::new);
+            event.register(ModMenuTypes.ADAMANTITE_FURNACE_MENU.get(), AdamantiteFurnaceScreen::new);
+
         }
     }
 }

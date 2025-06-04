@@ -1,0 +1,23 @@
+// 1.21.1	2025-06-04T02:30:55.0211276	Tags for minecraft:item mod id ores
+00a10233d08e3685a0615d3da3543afd96fef40e data/minecraft/tags/item/axes.json
+8065e8ca054044e0edcc96b61e9f550dc0f3b88e data/minecraft/tags/item/chest_armor.json
+8065e8ca054044e0edcc96b61e9f550dc0f3b88e data/minecraft/tags/item/enchantable/chest_armor.json
+62e196fd57653a1883b1aed48baf6801117aad3f data/minecraft/tags/item/enchantable/fire_aspect.json
+322cb3fb2abbe29c6316d57af157488e7c2f804a data/minecraft/tags/item/enchantable/foot_armor.json
+eb4359f3e6dc9c39743d0ca1d08f055ec1f76d9d data/minecraft/tags/item/enchantable/head_armor.json
+6f956fe07a2fd3ca776045bb73410f6468fb9a38 data/minecraft/tags/item/enchantable/leg_armor.json
+d8c62c79277e184cd620828ce15dd41e7400efb8 data/minecraft/tags/item/enchantable/mining.json
+d8c62c79277e184cd620828ce15dd41e7400efb8 data/minecraft/tags/item/enchantable/mining_loot.json
+3af6c1ee7a21e560555602af38a4389174184d85 data/minecraft/tags/item/enchantable/sharp_weapon.json
+322cb3fb2abbe29c6316d57af157488e7c2f804a data/minecraft/tags/item/foot_armor.json
+eb4359f3e6dc9c39743d0ca1d08f055ec1f76d9d data/minecraft/tags/item/head_armor.json
+a1dd887141f7c92e27088c6909510742bec8b258 data/minecraft/tags/item/hoes.json
+6f956fe07a2fd3ca776045bb73410f6468fb9a38 data/minecraft/tags/item/leg_armor.json
+fe3597fcafdc9b8ec940a40fcee9eb4fa7c4a55d data/minecraft/tags/item/pickaxes.json
+ec5cf2b66a8da35df0349acf6b739acd7bf687aa data/minecraft/tags/item/shovels.json
+62e196fd57653a1883b1aed48baf6801117aad3f data/minecraft/tags/item/swords.json
+dbd6bb3761cbb1940f4317be42603ed13c5ca068 data/ores/tags/item/adamantite_tools.json
+d78f217a48f1e468a216d090716f8f4e36ac43b5 data/ores/tags/item/celestium_ingot.json
+ed4deb4bbb3065fd08aaa769f2f6f716af21719b data/ores/tags/item/celestium_tools.json
+9ab6efc834b24ae8513b1fdee7d4dbd4ebb17ab8 data/ores/tags/item/mythril_tools.json
+257086d2f3de8a6b374b5b8e92affdf4b5cf7dc4 data/ores/tags/item/orichalcum_tools.json

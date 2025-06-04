@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "ores:block/cobalt_furnace_front_on",
+    "side": "ores:block/cobalt_furnace_side",
+    "top": "ores:block/cobalt_furnace_top"
+  }
+}

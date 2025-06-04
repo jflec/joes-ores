@@ -1,0 +1,17 @@
+{
+  "remove": [
+    "ores:mythril_ore",
+    "ores:deepslate_mythril_ore",
+    "ores:orichalcum_ore",
+    "ores:deepslate_orichalcum_ore",
+    "minecraft:obsidian"
+  ],
+  "values": [
+    "#ores:incorrect_for_cobalt_tool",
+    "ores:viridium_ore",
+    "ores:morphite_ore",
+    "ores:deepslate_morphite_ore",
+    "ores:tectonic_ore",
+    "ores:deepslate_tectonic_ore"
+  ]
+}

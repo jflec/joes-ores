@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "ores:block/morphite_synthesizer"
+    },
+    "lit=true": {
+      "model": "ores:block/morphite_synthesizer_on"
+    }
+  }
+}

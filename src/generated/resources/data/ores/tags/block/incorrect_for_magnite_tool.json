@@ -1,0 +1,16 @@
+{
+  "remove": [
+    "ores:magnite_ore",
+    "ores:deepslate_magnite_ore",
+    "ores:cobalt_ore",
+    "ores:deepslate_cobalt_ore"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_iron_tool",
+    "ores:viridium_ore",
+    "ores:morphite_ore",
+    "ores:deepslate_morphite_ore",
+    "ores:tectonic_ore",
+    "ores:deepslate_tectonic_ore"
+  ]
+}

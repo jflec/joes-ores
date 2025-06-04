@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "ores:block/morphite_synthesizer_front_on",
+    "side": "ores:block/morphite_synthesizer_front_on",
+    "top": "ores:block/morphite_synthesizer_top_on"
+  }
+}

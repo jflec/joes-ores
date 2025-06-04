@@ -1,0 +1,15 @@
+{
+  "values": [
+    "ores:orichalcum_ore",
+    "ores:deepslate_orichalcum_ore",
+    "ores:adamantite_ore",
+    "ores:deepslate_adamantite_ore",
+    "ores:celestium_ore",
+    "ores:deepslate_celestium_ore",
+    "ores:viridium_ore",
+    "ores:morphite_ore",
+    "ores:deepslate_morphite_ore",
+    "ores:tectonic_ore",
+    "ores:deepslate_tectonic_ore"
+  ]
+}

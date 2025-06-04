@@ -1,5 +1,6 @@
 package com.bigchadguys.ores.item.custom;
 
+import com.bigchadguys.ores.JoesOres;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -14,11 +15,11 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class SolariumArmorItem extends ArmorItem {
-    private static final ResourceLocation BONUS_HEALTH_ID = ResourceLocation.fromNamespaceAndPath("bigchadguys", "solarium_set_bonus_health");
-    private static final ResourceLocation BONUS_SPEED_ID = ResourceLocation.fromNamespaceAndPath("bigchadguys", "solarium_set_bonus_speed");
-    private static final ResourceLocation BONUS_JUMP_ID = ResourceLocation.fromNamespaceAndPath("bigchadguys", "solarium_set_bonus_jump");
-    private static final ResourceLocation BONUS_SAFE_FALL_DISTANCE_ID = ResourceLocation.fromNamespaceAndPath("bigchadguys", "solarium_set_bonus_safe_fall_distance");
-    private static final ResourceLocation BONUS_BLOCK_BREAK_SPEED_ID = ResourceLocation.fromNamespaceAndPath("bigchadguys", "solarium_set_bonus_block_break_speed");
+    private static final ResourceLocation BONUS_HEALTH_ID = ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, "solarium_set_bonus_health");
+    private static final ResourceLocation BONUS_SPEED_ID = ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, "solarium_set_bonus_speed");
+    private static final ResourceLocation BONUS_JUMP_ID = ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, "solarium_set_bonus_jump");
+    private static final ResourceLocation BONUS_SAFE_FALL_DISTANCE_ID = ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, "solarium_set_bonus_safe_fall_distance");
+    private static final ResourceLocation BONUS_BLOCK_BREAK_SPEED_ID = ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, "solarium_set_bonus_block_break_speed");
 
     private static final AttributeModifier SOLARIUM_HEALTH_MODIFIER = new AttributeModifier(BONUS_HEALTH_ID, 20.0, AttributeModifier.Operation.ADD_VALUE);
     private static final AttributeModifier SOLARIUM_SPEED_MODIFIER = new AttributeModifier(BONUS_SPEED_ID, 0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "ores:adamantite_ingot"
+    },
+    "F": {
+      "item": "ores:cobalt_furnace"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AFA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ores:adamantite_furnace"
+  }
+}

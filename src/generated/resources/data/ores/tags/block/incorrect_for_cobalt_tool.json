@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#ores:incorrect_for_magnite_tool",
+    "ores:viridium_ore",
+    "ores:morphite_ore",
+    "ores:deepslate_morphite_ore",
+    "ores:tectonic_ore",
+    "ores:deepslate_tectonic_ore",
+    "minecraft:obsidian"
+  ]
+}

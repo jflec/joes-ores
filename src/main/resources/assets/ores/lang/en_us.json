@@ -1,7 +1,6 @@
 {
   "itemGroup.ores.ores_tab": "Joe's Ores",
   "item.ores.raw_morphite": "Raw Morphite",
-  "item.ores.morphite_ingot": "Morphite Ingot",
   "block.ores.morphite_ore": "Morphite Ore",
   "block.ores.deepslate_morphite_ore": "Deepslate Morphite Ore",
   "block.ores.tectonic_ore": "Tectonic Ore",
@@ -20,6 +19,7 @@
   "item.ores.petrafite_axe": "Petrafite Axe",
   "item.ores.quicksilver": "Quicksilver",
   "item.ores.swiftite_ingot": "Swiftite Ingot",
+  "item.ores.swiftite_shovel": "Swiftite Shovel",
   "block.ores.morphite_synthesizer": "Morphite Synthesizer",
   "blockentity.ores.morphite_synthesizer": "Morphite Synthesizer",
 
@@ -33,7 +33,6 @@
   "item.ores.copper_leggings": "Copper Leggings",
   "item.ores.copper_boots": "Copper Boots",
 
-  "items.ores.swiftite_shovel": "Swiftite Shovel",
 
   "item.ores.cobalt_sword": "Cobalt Sword",
   "item.ores.cobalt_pickaxe": "Cobalt Pickaxe",
@@ -110,8 +109,57 @@
   "item.ores.viridium_axe": "Viridium Axe",
   "item.ores.viridium_shovel": "Viridium Shovel",
   "item.ores.viridium_hoe": "Viridium Hoe",
+
   "item.ores.viridium_helmet": "Viridium Helmet",
   "item.ores.viridium_chestplate": "Viridium Chestplate",
   "item.ores.viridium_leggings": "Viridium Leggings",
-  "item.ores.viridium_boots": "Viridium Boots"
+  "item.ores.viridium_boots": "Viridium Boots",
+
+  "item.ores.celestium_sword": "Celestium Sword",
+  "item.ores.celestium_pickaxe": "Celestium Pickaxe",
+  "item.ores.celestium_axe": "Celestium Axe",
+  "item.ores.celestium_shovel": "Celestium Shovel",
+  "item.ores.celestium_hoe": "Celestium Hoe",
+
+  "block.ores.cobalt_furnace": "Cobalt Furnace",
+  "block.ores.adamantite_furnace": "Adamantite Furnace",
+  "block.ores.cobalt_ore": "Cobalt Ore",
+  "block.ores.magnite_ore": "Magnite Ore",
+  "block.ores.mythril_ore": "Mythril Ore",
+  "block.ores.orichalcum_ore": "Orichalcum Ore",
+  "block.ores.adamantite_ore": "Adamantite Ore",
+  "block.ores.celestium_ore": "Celestium Ore",
+  "block.ores.viridium_ore": "Viridium Ore",
+  "block.ores.deepslate_cobalt_ore": "Deepslate Cobalt Ore",
+  "block.ores.deepslate_magnite_ore": "Deepslate Magnite Ore",
+  "block.ores.deepslate_mythril_ore": "Deepslate Mythril Ore",
+  "block.ores.deepslate_orichalcum_ore": "Deepslate Orichalcum Ore",
+  "block.ores.deepslate_adamantite_ore": "Deepslate Adamantite Ore",
+  "block.ores.deepslate_celestium_ore": "Deepslate Celestium Ore",
+
+  "tag.ores.celestium_ingot": "Celestium Ingot",
+  "tag.ores.mythril_tools": "Mythril Tools",
+  "tag.ores.orichalcum_tools": "Orichalcum Tools",
+  "tag.ores.adamantite_tools": "Adamantite Tools",
+  "tag.ores.celestium_tools": "Celestium Tools",
+
+  "item.ores.raw_cobalt": "Raw Cobalt",
+  "item.ores.raw_magnite": "Raw Magnite",
+  "item.ores.raw_mythril": "Raw Mythril",
+  "item.ores.raw_orichalcum": "Raw Orichalcum",
+  "item.ores.raw_adamantite": "Raw Adamantite",
+  "item.ores.raw_viridium": "Raw Viridium",
+  "item.ores.raw_celestium": "Raw Celestium",
+
+  "item.ores.cobalt_ingot": "Cobalt Ingot",
+  "item.ores.magnite_ingot": "Magnite Ingot",
+  "item.ores.mythril_ingot": "Mythril Ingot",
+  "item.ores.orichalcum_ingot": "Orichalcum Ingot",
+  "item.ores.adamantite_ingot": "Adamantite Ingot",
+  "item.ores.viridium_ingot": "Viridium Ingot",
+  "item.ores.lunarium_ingot": "Lunarium Ingot",
+  "item.ores.solarium_ingot": "Solarium Ingot",
+  "container.joesores.adamantite_furnace": "Adamantite Furnace",
+  "container.joesores.cobalt_furnace": "Cobalt Furnace"
+
 }

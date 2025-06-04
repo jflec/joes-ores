@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "viridium_ingot",
+  "ingredient": {
+    "item": "ores:viridium_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "ores:viridium_ingot"
+  }
+}

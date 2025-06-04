@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "ores:raw_morphite"
+    },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "QMQ",
+    "QMQ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ores:morphite_synthesizer"
+  }
+}

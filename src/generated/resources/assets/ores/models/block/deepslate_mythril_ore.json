@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ores:block/deepslate_mythril_ore"
+  }
+}

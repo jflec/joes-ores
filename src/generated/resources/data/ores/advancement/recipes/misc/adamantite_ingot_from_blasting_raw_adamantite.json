@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_adamantite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "ores:raw_adamantite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ores:adamantite_ingot_from_blasting_raw_adamantite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_adamantite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ores:adamantite_ingot_from_blasting_raw_adamantite"
+    ]
+  }
+}

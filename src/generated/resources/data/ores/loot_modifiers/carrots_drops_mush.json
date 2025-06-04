@@ -1,0 +1,14 @@
+{
+  "type": "ores:add_item_modifier",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:blocks/carrots"
+    },
+    {
+      "chance": 5.0E-4,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "ores:mush"
+}

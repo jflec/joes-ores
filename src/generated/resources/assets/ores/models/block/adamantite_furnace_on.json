@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "ores:block/adamantite_furnace_front_on",
+    "side": "ores:block/adamantite_furnace_side",
+    "top": "ores:block/adamantite_furnace_top"
+  }
+}

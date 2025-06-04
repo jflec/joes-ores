@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "magnite_ingot",
+  "ingredient": {
+    "item": "ores:raw_magnite"
+  },
+  "result": {
+    "count": 1,
+    "id": "ores:magnite_ingot"
+  }
+}

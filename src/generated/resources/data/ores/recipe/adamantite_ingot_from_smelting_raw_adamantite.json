@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "adamantite_ingot",
+  "ingredient": {
+    "item": "ores:raw_adamantite"
+  },
+  "result": {
+    "count": 1,
+    "id": "ores:adamantite_ingot"
+  }
+}

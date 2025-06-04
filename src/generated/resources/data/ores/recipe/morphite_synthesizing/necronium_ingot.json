@@ -1,0 +1,10 @@
+{
+  "type": "ores:morphite_synthesizing",
+  "upgrade": {
+    "item": "ores:ectoplasm"
+  },
+  "result": {
+    "id": "ores:necronium_ingot",
+    "Count": 1
+  }
+}
