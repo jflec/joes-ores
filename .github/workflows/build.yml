@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -12,14 +13,39 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Read modid and version from gradle.properties
+        id: props
+        run: |
+          echo "MODID=$(grep '^modid=' gradle.properties | cut -d '=' -f2)" >> $GITHUB_ENV
+          echo "MOD_VERSION=$(grep '^mod_version=' gradle.properties | cut -d '=' -f2)" >> $GITHUB_ENV
+
       - name: Setup JDK 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Cache Gradle files
+        uses: actions/cache@v4.2.3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Fix permissions for Gradle wrapper
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Upload built JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.MODID }}-${{ env.MOD_VERSION }}
+          path: build/libs/${{ env.MODID }}-${{ env.MOD_VERSION }}.jar
