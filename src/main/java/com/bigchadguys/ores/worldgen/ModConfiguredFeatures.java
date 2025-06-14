@@ -64,9 +64,8 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CELESTIUM_ORE.get().defaultBlockState())
         ), 2));
 
-        register(context, END_VIRIDIUM_KEY, Feature.ORE, new OreConfiguration(List.of(
-                OreConfiguration.target(endStoneReplaceables, ModBlocks.VIRIDIUM_ORE.get().defaultBlockState())
-        ), 1));
+        register(context, END_VIRIDIUM_KEY, Feature.ORE, new OreConfiguration(endStoneReplaceables,
+                ModBlocks.VIRIDIUM_ORE.get().defaultBlockState(), 2));
 
         register(context, OVERWORLD_MORPHITE_KEY, Feature.ORE, new OreConfiguration(List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.MORPHITE_ORE.get().defaultBlockState()),
@@ -80,7 +79,8 @@ public class ModConfiguredFeatures {
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                ResourceLocation.fromNamespaceAndPath(JoesOres.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(
